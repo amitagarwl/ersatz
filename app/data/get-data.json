@@ -1,0 +1,8 @@
+{
+  "status": "success",
+  "user_id": 1234,
+  "name": "Amit",
+  "email": "amit.agarwal@xyz",
+  "phone": "9999999999",
+  "address": "bangalore"
+}

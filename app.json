@@ -1,0 +1,65 @@
+{
+  "id": "/ersatz",
+  "cmd": null,
+  "cpus": 1,
+  "mem": 128,
+  "disk": 0,
+  "instances": 1,
+  "container": {
+    "type": "DOCKER",
+    "volumes": [],
+    "docker": {
+      "image": "<PATH for the artifactory>",
+      "network": "BRIDGE",
+      "portMappings": [
+        {
+          "containerPort": 9006,
+          "hostPort": 0,
+          "servicePort": 0,
+          "protocol": "tcp",
+          "labels": {}
+        },
+        {
+          "containerPort": 9006,
+          "hostPort": 0,
+          "servicePort": 0,
+          "protocol": "tcp",
+          "labels": {}
+        }
+      ],
+      "privileged": false,
+      "parameters": [],
+      "forcePullImage": true
+    }
+  },
+  "healthChecks": [
+    {
+      "path": "/ersatz/admin/healthcheck",
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "gracePeriodSeconds": 300,
+      "intervalSeconds": 60,
+      "timeoutSeconds": 20,
+      "maxConsecutiveFailures": 3,
+      "ignoreHttp1xx": false
+    }
+  ],
+  "labels": {
+    "HAPROXY_1_VHOST": "<< HA_PROXY_EXTERNAL >>",
+    "HAPROXY_1_GROUP": "external",
+    "HAPROXY_0_VHOST": "<< HA_PROXY_INTERNAL >>",
+    "HAPROXY_0_GROUP": "internal"
+  },
+  "portDefinitions": [
+    {
+      "port": 10068,
+      "protocol": "tcp",
+      "labels": {}
+    },
+    {
+      "port": 10069,
+      "protocol": "tcp",
+      "labels": {}
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "ersatz",
+  "version": "0.0.1",
+  "description": "Node Js Mock Server",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amitagarwl/ersatz"
+  },
+  "keywords": [
+    "Mock"
+  ],
+  "author": "Amit Agarwal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3",
+    "express-healthcheck": "^0.1.0",
+    "morgan": "^1.8.1"
+  }
+}
